@@ -1,0 +1,27 @@
+.cartao {
+  background: var(--cor-branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  border: 1px solid var(--cor-borda);
+  overflow: hidden;
+}
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--cor-borda);
+  background: var(--cor-areia-clara);
+}
+.titulo {
+  font-size: 1.05rem;
+  margin: 0;
+}
+.acoes {
+  display: flex;
+  gap: 8px;
+}
+.corpo {
+  padding: 20px;
+}

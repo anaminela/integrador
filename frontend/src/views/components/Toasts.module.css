@@ -1,0 +1,39 @@
+.container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2000;
+  max-width: 360px;
+}
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--raio-pequeno);
+  background: var(--cor-branco);
+  box-shadow: var(--sombra-forte);
+  border-left: 4px solid var(--cor-info);
+  animation: entrar 0.2s ease;
+}
+.sucesso { border-color: var(--cor-sucesso); }
+.erro    { border-color: var(--cor-erro); }
+.info    { border-color: var(--cor-info); }
+.alerta  { border-color: var(--cor-alerta); }
+.icone { font-size: 1.1rem; }
+.mensagem { flex: 1; font-size: 0.9rem; }
+.fechar {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--cor-texto-suave);
+}
+@keyframes entrar { from { transform: translateX(20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@media (max-width: 480px) {
+  .container { left: 12px; right: 12px; max-width: none; }
+}

@@ -1,0 +1,169 @@
+/* =============================================================
+   TEMA GLOBAL — G2 Arena Beach
+   -------------------------------------------------------------
+   Paleta inspirada em beach tennis / praia:
+     • Areia (tons quentes claros)
+     • Azul do mar / céu
+     • Coral / laranja (acentos e energia)
+   Definimos tudo como CSS Custom Properties (variáveis) para
+   reuso e fácil manutenção de tema.
+   ============================================================= */
+
+:root {
+  /* --- Cores da marca --- */
+  --cor-areia-clara: #fdf6ec;
+  --cor-areia: #f4e4c9;
+  --cor-areia-escura: #e6cfa5;
+
+  --cor-mar: #0d9bb5;      /* azul-turquesa principal */
+  --cor-mar-escuro: #0a6d80;
+  --cor-mar-profundo: #084b5a;
+  --cor-ceu: #4fc3d9;
+
+  --cor-coral: #ff6b4a;    /* acento quente (call-to-action) */
+  --cor-coral-escuro: #e5502f;
+  --cor-sol: #ffb703;      /* amarelo sol (destaques/estrela) */
+
+  /* --- Estados --- */
+  --cor-sucesso: #2e9e6b;
+  --cor-sucesso-claro: #d5f2e3;
+  --cor-erro: #d64545;
+  --cor-erro-claro: #fbe0e0;
+  --cor-alerta: #e6a700;
+  --cor-alerta-claro: #fdf1cf;
+  --cor-info: #0d9bb5;
+  --cor-info-claro: #d6f0f5;
+
+  /* --- Neutros --- */
+  --cor-texto: #1f2d3a;
+  --cor-texto-suave: #5a6b78;
+  --cor-borda: #e2ddd2;
+  --cor-fundo: #fbf7f0;
+  --cor-branco: #ffffff;
+  --cor-cinza: #8a8f98;
+
+  /* --- Tipografia --- */
+  --fonte-base: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+  /* --- Espaçamento e formas --- */
+  --raio: 12px;
+  --raio-pequeno: 8px;
+  --sombra: 0 6px 20px rgba(8, 75, 90, 0.08);
+  --sombra-forte: 0 12px 32px rgba(8, 75, 90, 0.16);
+  --transicao: 0.2s ease;
+
+  /* --- Layout --- */
+  --largura-sidebar: 250px;
+  --altura-topo: 64px;
+}
+
+/* Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--fonte-base);
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--cor-mar-escuro);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--cor-mar-profundo);
+  line-height: 1.25;
+}
+
+/* Barra de rolagem discreta */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cor-areia-escura);
+  border-radius: 8px;
+}
+
+/* Utilitários simples */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.gap-sm { gap: 8px; }
+.gap-md { gap: 16px; }
+.gap-lg { gap: 24px; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.wrap { flex-wrap: wrap; }
+.text-suave { color: var(--cor-texto-suave); }
+.text-center { text-align: center; }
+.mt-sm { margin-top: 8px; }
+.mt-md { margin-top: 16px; }
+.mt-lg { margin-top: 24px; }
+.mb-md { margin-bottom: 16px; }
+.w-full { width: 100%; }
+
+/* Grid responsivo genérico para cards */
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Estados de carregamento / vazio */
+.estado-vazio {
+  text-align: center;
+  padding: 48px 16px;
+  color: var(--cor-texto-suave);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--cor-areia-escura);
+  border-top-color: var(--cor-mar);
+  border-radius: 50%;
+  animation: girar 0.8s linear infinite;
+  margin: 32px auto;
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+/* Título de página padrão */
+.titulo-pagina {
+  margin-bottom: 4px;
+}
+.subtitulo-pagina {
+  color: var(--cor-texto-suave);
+  margin-bottom: 24px;
+}

@@ -1,0 +1,68 @@
+/* Estilos do componente Botao (CSS Module — classes escopadas) */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: var(--raio-pequeno);
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transicao);
+  white-space: nowrap;
+}
+.botao:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Tamanhos */
+.pequeno { padding: 6px 12px; font-size: 0.82rem; }
+.medio   { padding: 10px 18px; font-size: 0.95rem; }
+.grande  { padding: 14px 26px; font-size: 1.05rem; }
+
+/* Variantes */
+.primario {
+  background: var(--cor-mar);
+  color: #fff;
+}
+.primario:hover:not(:disabled) { background: var(--cor-mar-escuro); }
+
+.secundario {
+  background: var(--cor-areia);
+  color: var(--cor-mar-profundo);
+}
+.secundario:hover:not(:disabled) { background: var(--cor-areia-escura); }
+
+.perigo {
+  background: var(--cor-erro);
+  color: #fff;
+}
+.perigo:hover:not(:disabled) { background: #b83636; }
+
+.sucesso {
+  background: var(--cor-sucesso);
+  color: #fff;
+}
+.sucesso:hover:not(:disabled) { background: #26855a; }
+
+.fantasma {
+  background: transparent;
+  color: var(--cor-mar-escuro);
+  border: 1px solid var(--cor-borda);
+}
+.fantasma:hover:not(:disabled) { background: var(--cor-areia-clara); }
+
+/* Spinner de carregamento */
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: girarBtn 0.7s linear infinite;
+}
+@keyframes girarBtn {
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,62 @@
+/* Estilos compartilhados das telas de autenticação */
+.pagina {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Lado esquerdo: identidade visual (praia/beach) */
+.hero {
+  background: linear-gradient(135deg, var(--cor-mar), var(--cor-mar-profundo));
+  color: #fff;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '🏝️';
+  position: absolute;
+  font-size: 20rem;
+  right: -40px;
+  bottom: -60px;
+  opacity: 0.12;
+}
+.heroLogo { font-size: 3rem; margin-bottom: 16px; }
+.hero h1 { color: #fff; font-size: 2.2rem; margin-bottom: 12px; }
+.hero p { font-size: 1.05rem; max-width: 380px; opacity: 0.92; }
+.heroLista { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+.heroItem { display: flex; align-items: center; gap: 12px; font-size: 0.98rem; }
+
+/* Lado direito: formulário */
+.formLado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background: var(--cor-fundo);
+}
+.formCaixa {
+  width: 100%;
+  max-width: 420px;
+}
+.formTitulo { font-size: 1.6rem; margin-bottom: 6px; }
+.formSub { color: var(--cor-texto-suave); margin-bottom: 26px; }
+.rodapeLink { margin-top: 18px; text-align: center; font-size: 0.9rem; color: var(--cor-texto-suave); }
+.linkForte { color: var(--cor-mar-escuro); font-weight: 600; }
+.dica {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  background: var(--cor-areia-clara);
+  border: 1px dashed var(--cor-areia-escura);
+  border-radius: var(--raio-pequeno);
+  padding: 12px 14px;
+  color: var(--cor-texto-suave);
+}
+
+@media (max-width: 860px) {
+  .pagina { grid-template-columns: 1fr; }
+  .hero { display: none; }
+}

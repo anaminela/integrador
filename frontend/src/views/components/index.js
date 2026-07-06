@@ -1,0 +1,17 @@
+// =============================================================
+// BARREL DE COMPONENTES REUTILIZÁVEIS
+// -------------------------------------------------------------
+// Permite importar vários componentes numa linha só:
+//   import { Botao, CampoTexto, Cartao, Modal, Tabela } from '../components';
+// =============================================================
+export { default as Botao } from './Botao';
+export { default as CampoTexto } from './CampoTexto';
+export { default as CampoSelect } from './CampoSelect';
+export { default as Cartao } from './Cartao';
+export { default as Modal } from './Modal';
+export { default as Tabela } from './Tabela';
+export { default as Badge } from './Badge';
+export { default as Carregando } from './Carregando';
+export { default as EstadoVazio } from './EstadoVazio';
+export { default as Alerta } from './Alerta';
+export { default as Toasts } from './Toasts';

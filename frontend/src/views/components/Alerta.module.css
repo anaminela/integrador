@@ -1,0 +1,12 @@
+.alerta {
+  padding: 12px 16px;
+  border-radius: var(--raio-pequeno);
+  font-size: 0.9rem;
+  border-left: 4px solid;
+  margin-bottom: 16px;
+}
+.info    { background: var(--cor-info-claro); border-color: var(--cor-info); color: var(--cor-mar-escuro); }
+.sucesso { background: var(--cor-sucesso-claro); border-color: var(--cor-sucesso); color: #1c6b47; }
+.erro    { background: var(--cor-erro-claro); border-color: var(--cor-erro); color: #a52d2d; }
+.alerta.alerta { }
+.aviso   { background: var(--cor-alerta-claro); border-color: var(--cor-alerta); color: #8a6500; }

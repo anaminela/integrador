@@ -1,0 +1,105 @@
+/* Estilos compartilhados entre as páginas internas */
+
+/* Cabeçalho de página com ação à direita */
+.cabecalhoPagina {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+/* Cartões de métrica (dashboards) */
+.metricas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.metrica {
+  background: var(--cor-branco);
+  border-radius: var(--raio);
+  padding: 20px;
+  box-shadow: var(--sombra);
+  border-left: 5px solid var(--cor-mar);
+}
+.metrica.coral { border-color: var(--cor-coral); }
+.metrica.sol { border-color: var(--cor-sol); }
+.metrica.sucesso { border-color: var(--cor-sucesso); }
+.metrica.erro { border-color: var(--cor-erro); }
+.metricaRotulo { color: var(--cor-texto-suave); font-size: 0.85rem; }
+.metricaValor { font-size: 1.9rem; font-weight: 700; color: var(--cor-mar-profundo); margin-top: 4px; }
+.metricaIcone { font-size: 1.6rem; float: right; }
+
+/* Seção com título */
+.secao { margin-bottom: 34px; }
+
+/* Recurso (URL) exibido nos logs de auditoria */
+.recursoLog {
+  font-size: 0.82rem;
+  background: var(--cor-areia-clara, #f5efe6);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--cor-mar-profundo);
+  word-break: break-all;
+}
+
+.secaoTitulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+}
+
+/* Item de card de quadra/turma/produto */
+.itemTitulo { font-size: 1.05rem; margin-bottom: 4px; }
+.itemDado { font-size: 0.88rem; color: var(--cor-texto-suave); margin-bottom: 3px; }
+.itemPreco { font-size: 1.3rem; font-weight: 700; color: var(--cor-coral); margin-top: 8px; }
+
+/* Barra de filtros */
+.filtros {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  background: var(--cor-branco);
+  padding: 16px 18px;
+  border-radius: var(--raio);
+  border: 1px solid var(--cor-borda);
+}
+.filtros > div { margin-bottom: 0; }
+
+/* Grade de slots da agenda (RF4) */
+.gradeSlots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+.slot {
+  border: 2px solid transparent;
+  border-radius: var(--raio-pequeno);
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform var(--transicao), box-shadow var(--transicao);
+  color: #fff;
+  font-weight: 600;
+}
+.slot:hover { transform: translateY(-2px); box-shadow: var(--sombra); }
+.slotLivre { background: var(--cor-sucesso); }
+.slotOcupado { background: var(--cor-erro); cursor: not-allowed; }
+.slotBloqueado { background: var(--cor-cinza); cursor: not-allowed; }
+.slotHora { font-size: 0.95rem; }
+.slotInfo { font-size: 0.78rem; font-weight: 500; opacity: 0.95; margin-top: 4px; }
+.estrela { color: var(--cor-sol); }
+
+/* Legenda de cores */
+.legenda { display: flex; gap: 18px; flex-wrap: wrap; margin: 14px 0 20px; font-size: 0.84rem; }
+.legendaItem { display: flex; align-items: center; gap: 6px; }
+.bolinha { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+
+/* Ações em linha (botões pequenos em tabela) */
+.acoesLinha { display: flex; gap: 6px; flex-wrap: wrap; }

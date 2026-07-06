@@ -1,0 +1,14 @@
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.neutro   { background: var(--cor-areia); color: var(--cor-mar-profundo); }
+.sucesso  { background: var(--cor-sucesso-claro); color: #1c6b47; }
+.erro     { background: var(--cor-erro-claro); color: #a52d2d; }
+.alerta   { background: var(--cor-alerta-claro); color: #8a6500; }
+.info     { background: var(--cor-info-claro); color: var(--cor-mar-escuro); }
+.destaque { background: var(--cor-sol); color: #5a4200; }

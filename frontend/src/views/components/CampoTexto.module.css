@@ -1,0 +1,38 @@
+/* Estilos de CampoTexto e CampoSelect (compartilhados) */
+.grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--cor-mar-profundo);
+}
+.input {
+  padding: 11px 14px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: var(--cor-branco);
+  color: var(--cor-texto);
+  transition: border-color var(--transicao), box-shadow var(--transicao);
+  width: 100%;
+}
+.input:focus {
+  outline: none;
+  border-color: var(--cor-mar);
+  box-shadow: 0 0 0 3px var(--cor-info-claro);
+}
+.inputErro {
+  border-color: var(--cor-erro);
+}
+.inputErro:focus {
+  box-shadow: 0 0 0 3px var(--cor-erro-claro);
+}
+.mensagemErro {
+  font-size: 0.8rem;
+  color: var(--cor-erro);
+}
