@@ -1,9 +1,3 @@
-// =============================================================
-// CONTROLLER: useProdutos
-// -------------------------------------------------------------
-// Orquestra estoque/cardápio (RF8). Converte dados em Produto e
-// expõe ações de CRUD e movimentação de estoque.
-// =============================================================
 import { useState, useEffect, useCallback } from 'react';
 import { produtoService } from '../services';
 import { Produto } from '../models';

@@ -1,12 +1,3 @@
-// =============================================================
-// MODEL: FinanceiroModel  (RF10/RF11/RF12)
-// -------------------------------------------------------------
-// ATENÇÃO: o schema fornecido (g2_arena) NÃO possui a tabela
-// `financeiro`. Para manter os endpoints financeiros funcionais
-// sem quebrar (500), as transações são mantidas em memória.
-// (Para persistência real, criar a tabela `financeiro` e trocar
-//  este armazenamento por consultas ao banco.)
-// =============================================================
 const transacoes = [];
 let proximoId = 1;
 

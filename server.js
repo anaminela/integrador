@@ -1,10 +1,3 @@
-// =============================================================
-// PONTO DE ENTRADA DA APLICAÇÃO: server.js
-// -------------------------------------------------------------
-// Sobe a API Express, registra middlewares globais e monta as
-// rotas versionadas em /api/v1. Serve também o build do frontend
-// (frontend/dist) quando existir.
-// =============================================================
 require("dotenv").config();
 
 const path = require("path");
@@ -30,11 +23,6 @@ const financeiroRoutes  = require("./backend/routes/financeiroRoutes");
 const notificacaoRoutes = require("./backend/routes/notificacaoRoutes");
 const auditoriaRoutes   = require("./backend/routes/auditoriaRoutes");
 
-// -------------------------------------------------------------------
-// MIDDLEWARES GLOBAIS — a ORDEM importa.
-// 1. CORS  2. JSON parser  3. Log  4. Auditoria  5. Estáticos
-// O parser de JSON precisa vir ANTES das rotas para popular req.body.
-// -------------------------------------------------------------------
 app.use(cors());
 app.use(express.json());
 
@@ -45,12 +33,8 @@ app.use((req, _res, next) => {
 
 app.use(registrarAuditoria);
 
-// Serve o build de produção do frontend (Vite gera em frontend/dist).
 app.use(express.static(path.join(__dirname, "frontend", "dist")));
 
-// -------------------------------------------------------------------
-// MONTAGEM DAS ROTAS (API versionada)
-// -------------------------------------------------------------------
 app.use("/api/v1/auth",         authRoutes);
 app.use("/api/v1/usuarios",     usuarioRoutes);
 app.use("/api/v1/admins",       adminRoutes);
@@ -62,9 +46,6 @@ app.use("/api/v1/financeiro",   financeiroRoutes);
 app.use("/api/v1/notificacoes", notificacaoRoutes);
 app.use("/api/v1/auditoria",    auditoriaRoutes);
 
-// -------------------------------------------------------------------
-// HEALTH CHECK
-// -------------------------------------------------------------------
 app.get("/api/v1", (_req, res) => {
   res.json({
     status: "online",
@@ -85,9 +66,6 @@ app.get("/api/v1", (_req, res) => {
   });
 });
 
-// -------------------------------------------------------------------
-// 404 GLOBAL — captura qualquer rota /api não mapeada.
-// -------------------------------------------------------------------
 app.use("/api", (req, res) => {
   res.status(404).json({
     status: "erro",
@@ -95,10 +73,6 @@ app.use("/api", (req, res) => {
   });
 });
 
-// Fallback SPA: qualquer outra rota devolve o index.html do frontend
-// (permite deep-links do React Router quando servido pelo Express).
-// Obs.: no Express 5 os curingas precisam ser nomeados ("/*splat"),
-// pois o novo path-to-regexp não aceita mais o "*" solto.
 app.get("/*splat", (req, res, next) => {
   const indexHtml = path.join(__dirname, "frontend", "dist", "index.html");
   res.sendFile(indexHtml, (err) => {
@@ -106,14 +80,8 @@ app.get("/*splat", (req, res, next) => {
   });
 });
 
-// -------------------------------------------------------------------
-// HANDLER DE ERROS — deve ser o ÚLTIMO middleware registrado.
-// -------------------------------------------------------------------
 app.use(errorHandler);
 
-// -------------------------------------------------------------------
-// INICIALIZAÇÃO (uma única chamada a app.listen)
-// -------------------------------------------------------------------
 app.listen(PORT, () => {
   console.log("========================================");
   console.log(`  Servidor rodando em http://localhost:${PORT}`);

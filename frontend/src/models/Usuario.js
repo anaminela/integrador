@@ -1,11 +1,3 @@
-// =============================================================
-// MODEL: Usuario
-// -------------------------------------------------------------
-// No frontend, um "Model" representa a ENTIDADE de domínio:
-// dá forma aos dados que vêm/vão para a API e concentra a lógica
-// derivada (ex.: descobrir o papel efetivo do usuário).
-// Isso espelha o Model do backend e mantém a arquitetura MVC.
-// =============================================================
 import { PERFIS } from '../utils/constantes';
 
 export class Usuario {
@@ -22,10 +14,8 @@ export class Usuario {
     this.criado_em = dados.criado_em ?? null;
   }
 
-  // Papel efetivo usado para autorização na UI.
-  // Internos usam tipo_perfil; clientes usam o perfil.
   get papel() {
-    if (this.tipo_perfil) return this.tipo_perfil; // ADMINISTRADOR | FUNCIONARIO
+    if (this.tipo_perfil) return this.tipo_perfil;
     return PERFIS.CLIENTE;
   }
 
@@ -45,7 +35,6 @@ export class Usuario {
     return this.perfil === PERFIS.CLIENTE;
   }
 
-  // Rótulo amigável do papel, para exibir na interface.
   get rotuloPapel() {
     if (this.ehAdministrador) return 'Administrador';
     if (this.ehFuncionario) return 'Funcionário';

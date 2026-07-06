@@ -1,9 +1,3 @@
-// =============================================================
-// MODEL: Produto (estoque / cardápio)
-// -------------------------------------------------------------
-// Representa um item do estoque. Inclui lógica de alerta de
-// estoque mínimo (RF8.2) e margem de lucro.
-// =============================================================
 export class Produto {
   constructor(dados = {}) {
     this.id = dados.id ?? null;
@@ -18,7 +12,6 @@ export class Produto {
     this.criado_em = dados.criado_em ?? null;
   }
 
-  // True quando o estoque está no/abaixo do mínimo (dispara alerta).
   get estoqueBaixo() {
     return this.quantidade <= this.estoque_minimo;
   }

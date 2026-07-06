@@ -1,14 +1,3 @@
-// =============================================================
-// CAMADA: ROUTES — adminRoutes
-// Responsabilidade: mapear verbos + URLs para AdminController.
-//
-// NOTA SOBRE ORDEM DAS ROTAS:
-// router.patch("/:id/reativar") deve ser declarado ANTES de
-// router.patch("/:id") genérico (se existisse), pois o Express
-// resolve rotas na ordem de registro. Rotas mais específicas
-// sempre vêm antes das genéricas que usam o mesmo padrão.
-// =============================================================
-
 const express = require("express");
 const router  = express.Router();
 const AdminController = require("../controllers/AdminController");
@@ -21,17 +10,6 @@ const {
 } = require("../middlewares/validarAdmin");
 const { validarId } = require("../middlewares/validarQuadra");
 
-// -------------------------------------------------------------------
-//  Verbo    | Caminho                  | Ação
-// ----------|--------------------------|-----------------------------
-//  GET      | /admins                  | Lista todos (filtro query)
-//  GET      | /admins?tipo_perfil=X    | Lista filtrado por perfil
-//  GET      | /admins/:id              | Detalha um
-//  POST     | /admins                  | Cria admin ou funcionário
-//  PUT      | /admins/:id              | Atualiza dados
-//  PATCH    | /admins/:id/reativar     | Reverte soft delete (RF15)
-//  DELETE   | /admins/:id              | Soft delete
-// -------------------------------------------------------------------
 
 router.get(
   "/",
@@ -41,9 +19,6 @@ router.get(
   AdminController.listar
 );
 
-// IMPORTANTE: /metricas precisa vir ANTES de /:id, senão o Express
-// interpreta "metricas" como valor do parâmetro :id e a rota de
-// métricas se torna inalcançável.
 router.get(
   "/metricas",
   autenticar,

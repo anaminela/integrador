@@ -1,13 +1,3 @@
-// =============================================================
-// CONFIGURAÇÃO DO MENU DE NAVEGAÇÃO
-// -------------------------------------------------------------
-// Define os itens do menu lateral e QUEM pode ver cada um.
-// A propriedade "perfis" lista os papéis autorizados. O menu é
-// renderizado conforme o perfil do usuário logado (RF2).
-//   - "cliente"       → Cliente
-//   - "FUNCIONARIO"    → Funcionário
-//   - "ADMINISTRADOR"  → Administrador
-// =============================================================
 import { PERFIS } from '../../utils/constantes';
 
 const TODOS = [PERFIS.CLIENTE, PERFIS.FUNCIONARIO, PERFIS.ADMINISTRADOR];
@@ -34,7 +24,6 @@ export const ITENS_MENU = [
   { rotulo: 'Auditoria e Métricas', caminho: '/auditoria', icone: '📊', perfis: SO_ADMIN, grupo: 'Administração' },
 ];
 
-// Filtra os itens visíveis para um determinado papel.
 export function itensParaPapel(papel) {
   return ITENS_MENU.filter((item) => item.perfis.includes(papel));
 }

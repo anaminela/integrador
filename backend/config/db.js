@@ -1,10 +1,3 @@
-// =============================================================
-// CONFIGURAÇÃO DA CONEXÃO COM O BANCO (PostgreSQL via pg-promise)
-// -------------------------------------------------------------
-// Os valores vêm de variáveis de ambiente (.env), com defaults
-// voltados ao ambiente de desenvolvimento do projeto.
-// O banco padrão do projeto é "g2_arena".
-// =============================================================
 require('dotenv').config();
 
 const pgp = require('pg-promise')();

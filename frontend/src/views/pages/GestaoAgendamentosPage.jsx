@@ -1,10 +1,3 @@
-// =============================================================
-// PÁGINA: Gestão de Agendamentos (RF7) — interno
-// -------------------------------------------------------------
-// Lista TODOS os agendamentos (funcionário/admin) com filtros e
-// permite aceitar (confirmar), recusar (cancelar) ou marcar como
-// pendente via PATCH /agendamentos/:id/status.
-// =============================================================
 import { useState } from 'react';
 import { useNotificacao } from '../../contexts/NotificacaoContext';
 import { useAgendamentos } from '../../controllers';

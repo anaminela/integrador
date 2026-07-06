@@ -1,9 +1,3 @@
-// =============================================================
-// BARREL DE SERVICES
-// -------------------------------------------------------------
-// Reexporta todos os serviços num único ponto, permitindo
-// imports enxutos: import { authService, quadraService } from '../services';
-// =============================================================
 export { apiClient, ApiError, API_URL } from './apiClient';
 export { authService } from './authService';
 export { usuarioService } from './usuarioService';

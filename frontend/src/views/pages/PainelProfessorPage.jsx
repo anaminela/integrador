@@ -1,9 +1,3 @@
-// =============================================================
-// PÁGINA: Painel do Professor (RF6) — interno
-// -------------------------------------------------------------
-// Mostra a agenda das turmas e os clientes interessados (fila).
-// Consome GET /turmas/dashboard.
-// =============================================================
 import { useState, useEffect } from 'react';
 import { useNotificacao } from '../../contexts/NotificacaoContext';
 import { turmaService } from '../../services';

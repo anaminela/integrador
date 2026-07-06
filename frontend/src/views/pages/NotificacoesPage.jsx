@@ -1,11 +1,3 @@
-// =============================================================
-// PÁGINA: Central de Notificações (RF13 / RF14 in-app)
-// -------------------------------------------------------------
-// Substitui os lembretes por WhatsApp (fora do escopo) por uma
-// central in-app. Mostra as notificações acumuladas na sessão e,
-// para internos, permite "buscar" lembretes/alertas do backend e
-// adicioná-los à central.
-// =============================================================
 import { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNotificacao } from '../../contexts/NotificacaoContext';

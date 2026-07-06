@@ -1,8 +1,3 @@
-// =============================================================
-// BARREL DE CONTROLLERS (hooks)
-// -------------------------------------------------------------
-// Reexporta todos os hooks-controllers num único ponto.
-// =============================================================
 export { useRequisicao } from './useRequisicao';
 export { useFormulario } from './useFormulario';
 export { useQuadras } from './useQuadras';

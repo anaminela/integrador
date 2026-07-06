@@ -1,11 +1,3 @@
-// =============================================================
-// PÁGINA: Financeiro / Caixa (RF10, RF11, RF12) — interno
-// -------------------------------------------------------------
-// Permite:
-//   • Registrar entradas/saídas no caixa (RF10)
-//   • Gerar relatório consolidado por período com saldo (RF12)
-//   • Atualizar status de pagamento das transações (RF11)
-// =============================================================
 import { useState } from 'react';
 import { useNotificacao } from '../../contexts/NotificacaoContext';
 import { financeiroService } from '../../services';
@@ -90,7 +82,6 @@ export default function FinanceiroPage() {
     }
   }
 
-  // O relatório pode vir com {entradas, saidas, saldo, transacoes}.
   const transacoes = relatorio?.transacoes ?? (Array.isArray(relatorio) ? relatorio : []);
   const totalEntradas = relatorio?.total_entradas ?? relatorio?.entradas ?? 0;
   const totalSaidas = relatorio?.total_saidas ?? relatorio?.saidas ?? 0;

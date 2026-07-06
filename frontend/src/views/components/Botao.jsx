@@ -1,16 +1,3 @@
-// =============================================================
-// COMPONENTE: Botao
-// -------------------------------------------------------------
-// Botão reutilizável com variações de cor (variante), tamanhos e
-// estado de carregamento. Encapsula o estilo para manter
-// consistência visual em toda a aplicação.
-//
-// Props:
-//   variante: "primario" | "secundario" | "perigo" | "sucesso" | "fantasma"
-//   tamanho: "pequeno" | "medio" | "grande"
-//   carregando: mostra spinner e desabilita
-//   ...resto: repassado ao <button> (onClick, type, disabled...)
-// =============================================================
 import estilos from './Botao.module.css';
 
 export default function Botao({

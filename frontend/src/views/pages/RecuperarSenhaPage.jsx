@@ -1,12 +1,3 @@
-// =============================================================
-// PÁGINA: Recuperação de Senha (RF10)
-// -------------------------------------------------------------
-// Fluxo em duas etapas:
-//   1) Solicitar token por e-mail (POST /auth/esqueci-senha)
-//   2) Redefinir a senha com e-mail + token + nova senha
-//      (POST /auth/redefinir-senha)
-// No mock o backend retorna o token como "token_simulado_para_teste".
-// =============================================================
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useNotificacao } from '../../contexts/NotificacaoContext';
@@ -37,7 +28,7 @@ export default function RecuperarSenhaPage() {
     setEnviando(true);
     try {
       const resp = await authService.esqueciSenha(email.trim());
-      // No mock, o backend devolve o token para testes.
+
       const tokenTeste = resp.token_simulado_para_teste;
       if (tokenTeste) {
         setToken(tokenTeste);

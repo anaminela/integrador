@@ -1,14 +1,3 @@
-// =============================================================
-// PÁGINA: Produtos / Estoque (RF8, 8.1, 8.2, 8.3) — interno
-// -------------------------------------------------------------
-// Gestão de produtos com:
-//   • CRUD (criar/editar/remover)
-//   • Movimentação de estoque (entrada = compra, saída = venda)
-//   • Alertas de estoque mínimo (RF8.2)
-//   • Relatório de movimentação por período (RF8.3)
-// Organizada em abas para facilitar a navegação.
-// =============================================================
-import { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNotificacao } from '../../contexts/NotificacaoContext';
 import { useProdutos, useFormulario } from '../../controllers';

@@ -1,9 +1,3 @@
-// =============================================================
-// CONTROLLER: useAgendamentos
-// -------------------------------------------------------------
-// Orquestra a listagem de agendamentos (RF4/RF7). Converte os
-// dados em instâncias do Model Agendamento.
-// =============================================================
 import { useState, useEffect, useCallback } from 'react';
 import { agendamentoService } from '../services';
 import { Agendamento } from '../models';
@@ -13,7 +7,6 @@ export function useAgendamentos(filtros = {}) {
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
 
-  // Serializamos os filtros para usar como dependência estável.
   const chaveFiltros = JSON.stringify(filtros);
 
   const carregar = useCallback(async () => {

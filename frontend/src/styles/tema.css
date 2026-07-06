@@ -1,14 +1,3 @@
-/* =============================================================
-   TEMA GLOBAL — G2 Arena Beach
-   -------------------------------------------------------------
-   Paleta inspirada em beach tennis / praia:
-     • Areia (tons quentes claros)
-     • Azul do mar / céu
-     • Coral / laranja (acentos e energia)
-   Definimos tudo como CSS Custom Properties (variáveis) para
-   reuso e fácil manutenção de tema.
-   ============================================================= */
-
 :root {
   /* --- Cores da marca --- */
   --cor-areia-clara: #fdf6ec;
@@ -22,7 +11,7 @@
 
   --cor-coral: #ff6b4a;    /* acento quente (call-to-action) */
   --cor-coral-escuro: #e5502f;
-  --cor-sol: #ffb703;      /* amarelo sol (destaques/estrela) */
+  --cor-sol: #ffb703;      /* amarelo (destaques/estrela) */
 
   /* --- Estados --- */
   --cor-sucesso: #2e9e6b;

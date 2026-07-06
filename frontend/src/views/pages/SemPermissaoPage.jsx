@@ -1,9 +1,3 @@
-// =============================================================
-// PÁGINA: Sem Permissão (403)
-// -------------------------------------------------------------
-// Exibida quando o usuário autenticado tenta acessar uma rota
-// para a qual seu perfil não tem autorização.
-// =============================================================
 import { Link } from 'react-router-dom';
 import EstadoVazio from '../components/EstadoVazio';
 

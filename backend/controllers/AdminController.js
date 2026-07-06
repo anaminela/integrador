@@ -72,7 +72,6 @@ const AdminController = {
       delete dadosParaAtualizar.senha;
     }
 
-    // Traduz tipo_perfil (frontend) para a coluna perfil (schema).
     if (dadosParaAtualizar.tipo_perfil) {
       dadosParaAtualizar.perfil = tipoParaPerfilDb(dadosParaAtualizar.tipo_perfil);
       delete dadosParaAtualizar.tipo_perfil;

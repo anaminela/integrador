@@ -1,6 +1,6 @@
 export class Turma {
   constructor(dados = {}) {
-    this.id = dados.id ?? dados.id_turma ?? null; // <-- corrigir aqui
+    this.id = dados.id ?? dados.id_turma ?? null;
     this.quadra_id = dados.quadra_id ?? null;
     this.professor_id = dados.professor_id ?? null;
     this.dia_semana = dados.dia_semana ?? '';
@@ -9,7 +9,6 @@ export class Turma {
     this.nivel = dados.nivel ?? 'iniciante';
     this.capacidade_maxima = Number(dados.capacidade_maxima ?? 0);
 
-    // opcional: aceitar total_matriculados vindo do backend
     this.matriculados = Number(dados.matriculados ?? dados.total_matriculados ?? 0);
 
     this.vagas_disponiveis = Number(

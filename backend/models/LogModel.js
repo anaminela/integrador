@@ -1,12 +1,3 @@
-// =============================================================
-// MODEL: LogModel  (auditoria / RF16)
-// -------------------------------------------------------------
-// ATENÇÃO: o schema fornecido (g2_arena) NÃO possui a tabela
-// `log_auditoria`. Para não quebrar as requisições nem poluir o
-// console com erros de SQL, a auditoria é mantida em memória.
-// (Para persistência real, criar a tabela log_auditoria e trocar
-//  este armazenamento por consultas ao banco.)
-// =============================================================
 const logs = [];
 let proximoId = 1;
 

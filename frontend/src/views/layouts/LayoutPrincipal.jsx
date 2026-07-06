@@ -1,10 +1,3 @@
-// =============================================================
-// LAYOUT PRINCIPAL (área autenticada)
-// -------------------------------------------------------------
-// Estrutura visual das páginas internas: barra lateral (menu por
-// perfil), topo (usuário, sino de notificações, logout) e a área
-// de conteúdo (<Outlet> do React Router renderiza a página atual).
-// =============================================================
 import { useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
@@ -18,10 +11,8 @@ export default function LayoutPrincipal() {
   const navigate = useNavigate();
   const [menuAberto, setMenuAberto] = useState(false); // controle mobile
 
-  // Itens do menu conforme o papel efetivo do usuário.
   const itens = itensParaPapel(usuario?.papel);
 
-  // Agrupa itens por "grupo" (undefined = grupo principal sem título).
   const grupos = itens.reduce((acc, item) => {
     const chave = item.grupo || 'Principal';
     (acc[chave] = acc[chave] || []).push(item);

@@ -1,10 +1,3 @@
-// =============================================================
-// PÁGINA: Cadastro de Cliente (RF1)
-// -------------------------------------------------------------
-// Formulário público de auto-cadastro de clientes. Valida os
-// campos no frontend (espelhando o backend) e exige o aceite de
-// termos. Ao concluir, redireciona para o login.
-// =============================================================
 import { useState } from 'react';
 import { Link, useNavigate, Navigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
@@ -22,7 +15,6 @@ import {
 } from '../../utils/validadores';
 import estilos from './Auth.module.css';
 
-// Função de validação do formulário de cadastro.
 function validar(v) {
   return {
     nome: validarObrigatorio(v.nome, 'Nome'),

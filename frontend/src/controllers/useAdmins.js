@@ -1,8 +1,3 @@
-// =============================================================
-// CONTROLLER: useAdmins
-// -------------------------------------------------------------
-// Orquestra usuários internos (ADMINISTRADOR/FUNCIONARIO) — RF15.
-// =============================================================
 import { useState, useEffect, useCallback } from 'react';
 import { adminService } from '../services';
 import { Usuario } from '../models';

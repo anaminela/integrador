@@ -1,10 +1,3 @@
-// =============================================================
-// PÁGINA: Administração de Usuários (RF15) — só admin
-// -------------------------------------------------------------
-// Duas abas:
-//   • Clientes: lista e desativa clientes
-//   • Internos: CRUD de ADMINISTRADOR/FUNCIONARIO + reativar
-// =============================================================
 import { useState } from 'react';
 import { useNotificacao } from '../../contexts/NotificacaoContext';
 import { useUsuarios, useAdmins, useFormulario } from '../../controllers';

@@ -1,9 +1,3 @@
-// =============================================================
-// COMPONENTE: EstadoVazio
-// -------------------------------------------------------------
-// Mensagem exibida quando uma lista está vazia. Aceita um ícone
-// (emoji) e uma mensagem descritiva.
-// =============================================================
 export default function EstadoVazio({ icone = '🏖️', mensagem = 'Nada por aqui ainda.', children }) {
   return (
     <div className="estado-vazio">

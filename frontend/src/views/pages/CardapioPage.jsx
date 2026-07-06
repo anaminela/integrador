@@ -1,9 +1,3 @@
-// =============================================================
-// PÁGINA: Cardápio (RF3)
-// -------------------------------------------------------------
-// Exibe os produtos ativos disponíveis (quantidade > 0), agrupados
-// por categoria. É a "vitrine" da lanchonete/bar da arena.
-// =============================================================
 import { useState, useEffect } from 'react';
 import { produtoService } from '../../services';
 import { Cartao, Carregando, EstadoVazio, Badge } from '../components';
@@ -23,7 +17,6 @@ export default function CardapioPage() {
 
   if (carregando) return <Carregando texto="Carregando cardápio..." />;
 
-  // Agrupa produtos por categoria para exibir por seção.
   const porCategoria = produtos.reduce((acc, p) => {
     const cat = p.categoria || 'Outros';
     (acc[cat] = acc[cat] || []).push(p);

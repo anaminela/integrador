@@ -1,13 +1,3 @@
-// =============================================================
-// MODEL: QuadraModel  (tabela `quadra`)
-// -------------------------------------------------------------
-// Colunas do schema: id_quadra, nome, descricao, tamanho,
-// coberta (bool), ativa (bool).
-// O schema NÃO possui coluna de preço nem "tipo_piso"; por isso:
-//   • tipo_piso (frontend) é persistido em `tamanho`;
-//   • preco_hora é exposto com um valor padrão (PRECO_PADRAO),
-//     pois a precificação real é calculada no agendamento.
-// =============================================================
 const db = require('../config/db');
 
 const PRECO_PADRAO = 60;

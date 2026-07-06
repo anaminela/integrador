@@ -1,9 +1,3 @@
-// =============================================================
-// PÁGINA: Gestão de Quadras (RF14) — interno
-// -------------------------------------------------------------
-// CRUD de quadras. Funcionários e administradores podem criar e
-// editar; a remoção é restrita ao administrador (o backend valida).
-// =============================================================
 import { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNotificacao } from '../../contexts/NotificacaoContext';

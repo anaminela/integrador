@@ -1,9 +1,3 @@
-// =============================================================
-// PÁGINA: Cadastro de Turmas (RF18) — só admin
-// -------------------------------------------------------------
-// Cria turmas/treinos vinculando quadra, professor, dia, horário,
-// nível e capacidade (3–6). Lista as turmas já cadastradas.
-// =============================================================
 import { useState, useEffect } from 'react';
 import { useNotificacao } from '../../contexts/NotificacaoContext';
 import { useTurmas, useFormulario } from '../../controllers';

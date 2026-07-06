@@ -1,9 +1,3 @@
-// =============================================================
-// BARREL DE COMPONENTES REUTILIZÁVEIS
-// -------------------------------------------------------------
-// Permite importar vários componentes numa linha só:
-//   import { Botao, CampoTexto, Cartao, Modal, Tabela } from '../components';
-// =============================================================
 export { default as Botao } from './Botao';
 export { default as CampoTexto } from './CampoTexto';
 export { default as CampoSelect } from './CampoSelect';

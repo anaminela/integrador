@@ -1,10 +1,3 @@
-// =============================================================
-// PÁGINA: Início / Dashboard (RF3)
-// -------------------------------------------------------------
-// Vitrine do espaço: apresenta as quadras, uma prévia do cardápio
-// e as turmas/treinos disponíveis. Para usuários internos, exibe
-// também cartões de métricas gerais (RF16).
-// =============================================================
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
@@ -24,7 +17,6 @@ export default function DashboardPage() {
   useEffect(() => {
     async function carregar() {
       try {
-        // Carrega em paralelo os dados públicos do dashboard.
         const [rQuadras, rCardapio, rTurmas] = await Promise.allSettled([
           quadraService.listar(),
           produtoService.cardapio(),
@@ -37,7 +29,6 @@ export default function DashboardPage() {
         if (rTurmas.status === 'fulfilled')
           setTurmas(rTurmas.value.data ?? rTurmas.value ?? []);
 
-        // Métricas apenas para internos.
         if (usuario?.ehInterno) {
           try {
             const m = await adminService.metricas();

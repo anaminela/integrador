@@ -1,8 +1,3 @@
-// =============================================================
-// CONTROLLER: useUsuarios
-// -------------------------------------------------------------
-// Orquestra clientes (RF15). Converte dados em Model Usuario.
-// =============================================================
 import { useState, useEffect, useCallback } from 'react';
 import { usuarioService } from '../services';
 import { Usuario } from '../models';

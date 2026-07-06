@@ -1,9 +1,3 @@
-// =============================================================
-// MODEL: Agendamento
-// -------------------------------------------------------------
-// Representa uma reserva de quadra. Inclui lógica derivada de
-// status (confirmado/pendente/cancelado) e horário nobre (RF4).
-// =============================================================
 export class Agendamento {
   constructor(dados = {}) {
     this.id = dados.id ?? null;

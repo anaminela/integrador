@@ -1,9 +1,3 @@
-// =============================================================
-// CONTROLLER: useQuadras
-// -------------------------------------------------------------
-// Orquestra a listagem/CRUD de quadras, convertendo os dados
-// crus da API em instâncias do Model Quadra.
-// =============================================================
 import { useState, useEffect, useCallback } from 'react';
 import { quadraService } from '../services';
 import { Quadra } from '../models';

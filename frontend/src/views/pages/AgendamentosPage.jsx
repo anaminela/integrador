@@ -1,15 +1,3 @@
-// =============================================================
-// PÁGINA: Agendamento de Quadras (RF4 / RF9)
-// -------------------------------------------------------------
-// Fluxo do usuário:
-//   1. Escolhe a quadra e a data
-//   2. Vê a grade de horários (verde = livre, vermelho = ocupado,
-//      ⭐ = horário nobre) com o preço de cada slot
-//   3. Clica num slot livre → abre o modal para confirmar
-//      (tipo avulso/mensal + esporte)
-//   4. Se o horário estiver ocupado, pode entrar na fila (RF9)
-// Abaixo, lista os próprios agendamentos com opção de cancelar.
-// =============================================================
 import { useState, useEffect, useCallback } from 'react';
 import { useNotificacao } from '../../contexts/NotificacaoContext';
 import { quadraService, agendamentoService } from '../../services';
@@ -38,16 +26,13 @@ export default function AgendamentosPage() {
   const [slots, setSlots] = useState([]);
   const [carregandoSlots, setCarregandoSlots] = useState(false);
 
-  // Modal de confirmação de agendamento.
   const [slotSelecionado, setSlotSelecionado] = useState(null);
   const [tipo, setTipo] = useState('avulso');
   const [esporte, setEsporte] = useState('');
   const [salvando, setSalvando] = useState(false);
 
-  // Lista de agendamentos do próprio usuário.
   const { agendamentos, carregando: carregandoLista, carregar, cancelar } = useAgendamentos();
 
-  // Carrega as quadras uma vez.
   useEffect(() => {
     quadraService.listar().then((r) => {
       const lista = r.data ?? r ?? [];
@@ -57,7 +42,6 @@ export default function AgendamentosPage() {
     });
   }, []);
 
-  // Busca a disponibilidade sempre que quadra/data mudam.
   const buscarDisponibilidade = useCallback(async () => {
     if (!quadraId || !data) return;
     setCarregandoSlots(true);
@@ -76,7 +60,6 @@ export default function AgendamentosPage() {
     buscarDisponibilidade();
   }, [buscarDisponibilidade]);
 
-  // Abre o modal ao clicar num slot livre.
   function aoClicarSlot(slot) {
     if (!slot.disponivel) return;
     setSlotSelecionado(slot);
@@ -84,7 +67,6 @@ export default function AgendamentosPage() {
     setEsporte('');
   }
 
-  // Confirma o agendamento (POST /agendamentos).
   async function confirmarAgendamento() {
     if (!esporte.trim()) {
       notifErro('Informe o esporte.');
@@ -105,7 +87,6 @@ export default function AgendamentosPage() {
       buscarDisponibilidade();
       carregar();
     } catch (e) {
-      // Conflito (409): oferece entrar na fila.
       if (e.status === 409) {
         notifErro('Horário já reservado. Você pode entrar na fila de espera.');
       } else {
@@ -116,7 +97,6 @@ export default function AgendamentosPage() {
     }
   }
 
-  // Entra na fila de espera de um slot ocupado (RF9).
   async function entrarNaFila(slot) {
     try {
       const r = await agendamentoService.entrarNaFila({
@@ -145,7 +125,6 @@ export default function AgendamentosPage() {
     }
   }
 
-  // Colunas da tabela de "meus agendamentos".
   const colunas = [
     { chave: 'data', titulo: 'Data', render: (a) => formatarData(a.data) },
     { chave: 'periodo', titulo: 'Horário', render: (a) => `${a.hora_inicio} - ${a.hora_fim}` },

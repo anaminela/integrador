@@ -1,10 +1,3 @@
-// =============================================================
-// PÁGINA: Turmas & Treinos (RF5)
-// -------------------------------------------------------------
-// Lista as turmas disponíveis com nível, dia, horário e vagas.
-// O cliente pode se inscrever (informando um telefone de contato)
-// ou entrar na fila de espera quando a turma está lotada.
-// =============================================================
 import { useState } from 'react';
 import { useNotificacao } from '../../contexts/NotificacaoContext';
 import { useTurmas } from '../../controllers';

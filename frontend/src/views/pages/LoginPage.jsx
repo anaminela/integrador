@@ -1,10 +1,3 @@
-// =============================================================
-// PÁGINA: Login (RF2)
-// -------------------------------------------------------------
-// Autentica o usuário por CPF ou e-mail + senha. Ao logar,
-// redireciona para a rota de origem (ou para o Dashboard).
-// O menu/rotas passam a ser renderizados conforme o perfil.
-// =============================================================
 import { useState } from 'react';
 import { Link, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
@@ -23,10 +16,8 @@ export default function LoginPage() {
   const [erro, setErro] = useState('');
   const [enviando, setEnviando] = useState(false);
 
-  // Se já está logado, não faz sentido ver o login.
   if (autenticado) return <Navigate to="/" replace />;
 
-  // Rota de onde o usuário veio (para voltar após login).
   const destino = location.state?.de || '/';
 
   async function aoEnviar(e) {

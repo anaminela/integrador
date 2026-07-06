@@ -1,8 +1,3 @@
-// =============================================================
-// CONTROLLER: useTurmas
-// -------------------------------------------------------------
-// Orquestra turmas/treinos (RF5/RF18). Converte dados em Turma.
-// =============================================================
 import { useState, useEffect, useCallback } from 'react';
 import { turmaService } from '../services';
 import { Turma } from '../models';

@@ -1,10 +1,3 @@
-// =============================================================
-// COMPONENTE: CampoSelect
-// -------------------------------------------------------------
-// <select> controlado com rótulo e erro, reutilizando os estilos
-// do CampoTexto. Recebe "opcoes" como array de { valor, rotulo }
-// ou de strings simples.
-// =============================================================
 import estilos from './CampoTexto.module.css';
 
 export default function CampoSelect({

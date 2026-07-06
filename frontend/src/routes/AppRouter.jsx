@@ -1,12 +1,3 @@
-// =============================================================
-// ROTEADOR PRINCIPAL DA APLICAÇÃO
-// -------------------------------------------------------------
-// Define TODAS as rotas do frontend usando o React Router.
-//   • Rotas públicas: login, cadastro, recuperação de senha
-//   • Rotas protegidas: envolvidas por <RotaProtegida> e pelo
-//     <LayoutPrincipal> (menu + topo)
-//   • Autorização por papel via prop "papeis"
-// =============================================================
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { PERFIS } from '../utils/constantes';
 import RotaProtegida from './RotaProtegida';

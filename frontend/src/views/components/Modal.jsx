@@ -1,17 +1,3 @@
-// =============================================================
-// COMPONENTE: Modal (janela sobreposta)
-// -------------------------------------------------------------
-// Exibe conteúdo em uma camada acima da página (overlay).
-// Fecha ao clicar no fundo ou no botão X. Usado para formulários
-// de criação/edição e confirmações.
-//
-// Props:
-//   aberto: controla a visibilidade
-//   aoFechar: callback ao fechar
-//   titulo: cabeçalho do modal
-//   children: conteúdo
-//   rodape: área opcional de botões no rodapé
-// =============================================================
 import { useEffect } from 'react';
 import estilos from './Modal.module.css';
 

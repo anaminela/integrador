@@ -1,14 +1,3 @@
-// =============================================================
-// PÁGINA: Auditoria e Métricas do Sistema (RF16) — só admin
-// -------------------------------------------------------------
-// Exibe:
-//   • Dashboard de métricas (total de usuários, novos no período,
-//     total de agendamentos, média de agendamentos por usuário)
-//   • Histórico de operações (logs POST/PUT/PATCH/DELETE) com
-//     usuário, ação, recurso, status HTTP, IP e data.
-// Fonte de dados: auditoriaService (GET /auditoria/dashboard e
-// GET /auditoria/logs). Acesso restrito ao ADMINISTRADOR.
-// =============================================================
 import { useState, useEffect, useCallback } from 'react';
 import { useNotificacao } from '../../contexts/NotificacaoContext';
 import { auditoriaService } from '../../services';
@@ -16,7 +5,6 @@ import { Botao, CampoTexto, Tabela, Badge, Carregando } from '../components';
 import { formatarDataHora } from '../../utils/formatadores';
 import estilos from './Paginas.module.css';
 
-// Define o tom do Badge conforme a faixa do status HTTP.
 function tomStatus(status) {
   if (status >= 500) return 'erro';
   if (status >= 400) return 'alerta';
@@ -24,7 +12,6 @@ function tomStatus(status) {
   return 'neutro';
 }
 
-// Define o tom do Badge conforme o método/ação da requisição.
 function tomAcao(acao) {
   switch (acao) {
     case 'POST':
@@ -42,18 +29,15 @@ function tomAcao(acao) {
 export default function AuditoriaPage() {
   const { erro: notifErro } = useNotificacao();
 
-  // Estado das métricas (dashboard) e do período de análise.
   const [metricas, setMetricas] = useState(null);
   const [periodoAnalisado, setPeriodoAnalisado] = useState('');
   const [periodo, setPeriodo] = useState({ inicio: '', fim: '' });
   const [carregandoMetricas, setCarregandoMetricas] = useState(true);
 
-  // Estado dos logs de operação.
   const [logs, setLogs] = useState([]);
   const [limite, setLimite] = useState('100');
   const [carregandoLogs, setCarregandoLogs] = useState(true);
 
-  // Busca as métricas do dashboard (opcionalmente por período).
   const carregarMetricas = useCallback(
     async (inicio, fim) => {
       setCarregandoMetricas(true);
@@ -70,7 +54,6 @@ export default function AuditoriaPage() {
     [notifErro],
   );
 
-  // Busca o histórico de logs respeitando o limite informado.
   const carregarLogs = useCallback(
     async (qtd) => {
       setCarregandoLogs(true);
@@ -86,24 +69,20 @@ export default function AuditoriaPage() {
     [notifErro],
   );
 
-  // Carga inicial: métricas de todo o histórico + últimos 100 logs.
   useEffect(() => {
     carregarMetricas();
     carregarLogs(100);
   }, [carregarMetricas, carregarLogs]);
 
-  // Aplica o filtro de período às métricas.
   function aplicarPeriodo() {
     carregarMetricas(periodo.inicio, periodo.fim);
   }
 
-  // Limpa o filtro de período e recarrega o histórico completo.
   function limparPeriodo() {
     setPeriodo({ inicio: '', fim: '' });
     carregarMetricas();
   }
 
-  // Colunas da tabela de logs.
   const colunas = [
     { chave: 'id', titulo: '#' },
     {

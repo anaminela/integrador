@@ -1,13 +1,3 @@
-// =============================================================
-// MODEL: ProdutoModel  (tabelas `produto` e `movimento_estoque`)
-// -------------------------------------------------------------
-// Schema produto: id_produto, nome, categoria, qtd_estoque,
-// estoque_minimo, preco_custo, preco_venda, ativo.
-// (Não existe coluna `descricao` no schema — o frontend a envia,
-//  mas ela é ignorada na persistência.)
-// Schema movimento_estoque: id_movimento_estoque, id_produto,
-// tipo (ENTRADA/SAIDA), quantidade, origem, data_movimento.
-// =============================================================
 const db = require('../config/db');
 
 function formatar(row) {

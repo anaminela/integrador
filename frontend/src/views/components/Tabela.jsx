@@ -1,12 +1,3 @@
-// =============================================================
-// COMPONENTE: Tabela
-// -------------------------------------------------------------
-// Tabela genérica e responsiva. Recebe:
-//   colunas: [{ chave, titulo, render?(linha) }]
-//   dados: array de objetos
-//   vazio: mensagem quando não há dados
-// A prop "render" permite customizar a célula (ex.: badges, botões).
-// =============================================================
 import estilos from './Tabela.module.css';
 
 export default function Tabela({ colunas, dados = [], vazio = 'Nenhum registro encontrado.' }) {

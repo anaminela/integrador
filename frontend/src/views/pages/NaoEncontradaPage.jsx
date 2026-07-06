@@ -1,8 +1,3 @@
-// =============================================================
-// PÁGINA: Não Encontrada (404)
-// -------------------------------------------------------------
-// Rota curinga: qualquer caminho não mapeado cai aqui.
-// =============================================================
 import { Link } from 'react-router-dom';
 
 export default function NaoEncontradaPage() {

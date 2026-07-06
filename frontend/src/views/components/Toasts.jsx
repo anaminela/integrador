@@ -1,10 +1,3 @@
-// =============================================================
-// COMPONENTE: Toasts (notificações flutuantes)
-// -------------------------------------------------------------
-// Renderiza os toasts armazenados no NotificacaoContext no canto
-// da tela. Cada toast some sozinho após alguns segundos ou ao
-// clicar no X. É montado uma única vez no layout raiz.
-// =============================================================
 import { useNotificacao } from '../../contexts/NotificacaoContext';
 import estilos from './Toasts.module.css';
 

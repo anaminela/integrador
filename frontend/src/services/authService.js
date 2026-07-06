@@ -1,9 +1,3 @@
-// =============================================================
-// SERVICE: Autenticação (/auth)
-// -------------------------------------------------------------
-// Camada fina que traduz as ações de autenticação em chamadas
-// HTTP. Não guarda estado — quem guarda é o AuthContext.
-// =============================================================
 import { apiClient } from './apiClient';
 
 export const authService = {

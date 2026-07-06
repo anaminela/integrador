@@ -1,10 +1,3 @@
-// =============================================================
-// MODEL: UsuarioModel  (tabela `usuario`)
-// -------------------------------------------------------------
-// Faz a ponte entre o vocabulário do frontend (id, nome, cpf,
-// perfil='cliente'/'interno', tipo_perfil) e as colunas reais do
-// schema g2_arena (id_usuario, nome_completo, cpf_cnpj, perfil).
-// =============================================================
 const db = require('../config/db');
 
 // Traduz o perfil do banco no par usado pelo frontend.

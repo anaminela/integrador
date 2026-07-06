@@ -1,10 +1,3 @@
-// =============================================================
-// COMPONENTE: CampoTexto
-// -------------------------------------------------------------
-// Input controlado com rótulo (label), mensagem de erro e
-// suporte a diferentes tipos (text, email, password, date...).
-// Padroniza a aparência dos formulários e a exibição de erros.
-// =============================================================
 import estilos from './CampoTexto.module.css';
 
 export default function CampoTexto({
