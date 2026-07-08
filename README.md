@@ -147,13 +147,6 @@ Depois disso, a aplicacao fica disponivel em `http://localhost:3000` e a API em 
 
 O endpoint `/api/v1` retorna uma resposta simples com o status da API e a lista de rotas disponiveis.
 
-## Observacoes importantes
-
-- O projeto pressupoe que o schema do PostgreSQL e os dados iniciais ja existam. Nao ha scripts SQL versionados neste repositorio.
-- O login do frontend envia `login` e `senha` para o endpoint de autenticacao.
-- Se a API estiver em outro endereco, ajuste `VITE_API_URL` no arquivo `frontend/.env`.
-- Se o build do frontend nao existir, o backend nao conseguira servir a interface estatica em producao local.
-
 ## Scripts disponiveis
 
 ### Raiz do projeto
